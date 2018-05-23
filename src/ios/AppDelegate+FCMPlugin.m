@@ -303,6 +303,12 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 // To enable direct data messages, you can set [Messaging messaging].shouldEstablishDirectChannel to YES.
 - (void)messaging:(FIRMessaging *)messaging didReceiveMessage:(FIRMessagingRemoteMessage *)remoteMessage {
     NSLog(@"Received data message: %@", remoteMessage.appData);
+
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:remoteMessage.appData
+                                                       options:0
+                                                         error:&error];
+    [FCMPlugin.fcmPlugin notifyOfMessage:jsonData];
 }
 
 +(NSData*)getLastPush
