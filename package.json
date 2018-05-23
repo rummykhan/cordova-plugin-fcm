@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "cordova-plugin-fcm",
+  "name": "cordova-plugin-fcm-push",
   "cordova_name": "Cordova FCM Push Plugin",
   "description": "Google Firebase Cloud Messaging Cordova Push Plugin",
   "license": "MIT",
@@ -14,7 +14,7 @@
    {
     "name": "Rehan Manzoor",
     "email": "rehan_manzoor@outlook.com"
-   },
+   }
   ],
   "repository": {
     "type": "git",
